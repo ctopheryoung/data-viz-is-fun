@@ -1,28 +1,7 @@
 import './App.css';
-import { LineChart, Line, XAxis, YAxis } from 'recharts';
-import * as data from '../data/selected_formatted_gsodi_data.json'
-
-interface GSODIDataPoint {
-  ID_country_name: string,
-  ID_country_code: number,
-  ID_year: number,
-  ID_country_year: number,
-  ID_region_name: string,
-  ID_region: number,
-  ID_subregion_name: string,
-  ID_subregion: number,
-  C_A1: number,
-  C_A2: number,
-  C_A3: number,
-  C_A4: number,
-  C_SD51: number,
-  C_SD52: number,
-  C_SD53: number,
-  C_SD54: number,
-  regime_status_name: string,
-  democratic_performance_name: string,
-  democratic_performance_numeric: number,
-}
+import data from '../data/selected_formatted_gsodi_data.json'
+import { GSODIDataPoint } from '../interfaces/GSODIDataPoint'
+import Chart from '../Chart/Chart';
 
 const dataArray: GSODIDataPoint[] = data as GSODIDataPoint[];
 
@@ -43,13 +22,18 @@ const dataArray: GSODIDataPoint[] = data as GSODIDataPoint[];
 // C_A3 - Checks On Goverment
 // C_A4 - Impartial Administration
 
+// Participatory Engagement
 // C_SD51 - Civil society participation
 // C_SD52 - Electoral participation
 // C_SD53 - Direct Democracy
 // C_SD54 - Local Democracy
 
+// DECISION: Combine any country or region with any ONE of C_A1, CA_2, etc or ALL of C_SD51, etc
+// Start with any ONE of C_A1, CA_2, etc or ALL of C_SD51, etc as lines on chart for World
+// Add ability to change country/region if there is time
 
-function getFilteredData(): Object[] {
+
+function getFilteredData(): GSODIDataPoint[] {
   // Perform all filtering operations and return data to show in graph
   return dataArray.filter(item => item.ID_country_name === "World")
 }
@@ -57,23 +41,7 @@ function getFilteredData(): Object[] {
 function App() {
   return (
     <div className="App">
-      <LineChart 
-        width={1200} 
-        height={400} 
-        data={getFilteredData()} 
-        margin={{
-          top: 50,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}>
-        <Line type="monotone" dataKey="C_A1" stroke="#06d6a0" />
-        <Line type="monotone" dataKey="C_A2" stroke="#1b9aaa" />
-        <Line type="monotone" dataKey="C_A3" stroke="#ef476f" />
-        <Line type="monotone" dataKey="C_A4" stroke="#ffc43d" />
-        <XAxis dataKey="ID_year" />
-        <YAxis />
-      </LineChart>
+      <Chart data={getFilteredData()} />
     </div>
   );
 }
