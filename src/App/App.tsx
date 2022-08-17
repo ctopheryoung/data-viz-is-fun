@@ -1,9 +1,13 @@
 import React from 'react';
-import './App.css';
-import data from '../data/selected_formatted_gsodi_data.json'
-import { GSODIDataPoint } from '../interfaces/GSODIDataPoint'
+import data from '../data/selected_formatted_gsodi_data.json';
+import { GSODIDataPoint } from '../interfaces/GSODIDataPoint';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Chart from '../Chart/Chart';
-import CountryRegionSelect  from '../CountryRegionSelect/CountryRegionSelect';
+import CountryRegionSelect from '../CountryRegionSelect/CountryRegionSelect';
+import YAxisToggle from '../YAxisToggle/YAxisToggle';
 
 const dataArray: GSODIDataPoint[] = data as GSODIDataPoint[];
 
@@ -42,15 +46,53 @@ function getFilteredData(country: string): GSODIDataPoint[] {
 
 function App() {
   const [country, setCountry] = React.useState<string>('World');
+  const [dynamicYAxis, setDynamicYAxis] = React.useState(true);
 
   function handleCountryRegionChange(newCountryRegion: string) {
     setCountry(newCountryRegion);
   }
+
+  function handleDynamicYAxisChange(newValue: boolean) {
+    setDynamicYAxis(newValue)
+  }
   
   return (
     <div className="App">
-      <Chart data={getFilteredData(country)} />
-      <CountryRegionSelect selectedCountryRegion={country} onCountryRegionChange={handleCountryRegionChange} />
+      <Container component="main">
+        <CssBaseline />
+
+        <Box
+          sx={{
+            marginTop: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Typography component="h1" variant="h3" gutterBottom>
+            State of Democracy Over Time
+          </Typography>
+          <Typography component="h2" variant="h5" gutterBottom>
+            {country}
+          </Typography>
+        </Box>
+
+        <Chart data={getFilteredData(country)} dynamicYAxis={dynamicYAxis} />
+
+        <Box
+          sx={{
+            marginTop: 2,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-evenly'
+          }}
+        >
+          <YAxisToggle dynamicYAxis={dynamicYAxis} onDynamicYAxisChange={handleDynamicYAxisChange} />
+          <CountryRegionSelect selectedCountryRegion={country} onCountryRegionChange={handleCountryRegionChange} />
+        </Box>
+
+        {/* TODO: Add source: "Source: International IDEA, The Global State of Democracy Indices, 1975-2021" */}
+      </Container>
     </div>
   );
 }
