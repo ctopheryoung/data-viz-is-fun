@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, YAxis } from 'recharts';
 import { ChartProps } from '../interfaces/ChartProps';
+import './Chart.css'
 
 function Chart({ data }: ChartProps) {
   return (
@@ -18,8 +19,8 @@ function Chart({ data }: ChartProps) {
         <Line type="monotone" dataKey="C_A2" stroke="#1b9aaa" />
         <Line type="monotone" dataKey="C_A3" stroke="#ef476f" />
         <Line type="monotone" dataKey="C_A4" stroke="#ffc43d" />
-        <XAxis dataKey="ID_year" />
-        <YAxis />
+        <XAxis dataKey="ID_year" interval={4} />
+        <YAxis domain={[0, 1]} />
       </LineChart>
     </div>
   );
