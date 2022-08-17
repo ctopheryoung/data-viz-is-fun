@@ -5,9 +5,9 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Chart from '../Chart/Chart';
-import CountryRegionSelect from '../CountryRegionSelect/CountryRegionSelect';
-import YAxisToggle from '../YAxisToggle/YAxisToggle';
+import Chart from './Chart';
+import CountryRegionSelect from './CountryRegionSelect';
+import YAxisToggle from './YAxisToggle';
 
 const dataArray: GSODIDataPoint[] = data as GSODIDataPoint[];
 
