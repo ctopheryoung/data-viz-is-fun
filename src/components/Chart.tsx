@@ -11,12 +11,10 @@ function Chart({ data, normalizeYAxis }: ChartProps) {
   return (
     // TODO: Add tooltip for Legend labels?
     <div className="Chart">
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={350}>
         <LineChart 
-          width={1000} 
-          height={400} 
           data={data} 
-          margin={{ top: 20, left: 5, right: 20, bottom: 5 }}
+          margin={{ top: 5, left: 5, right: 20, bottom: 5 }}
         >
           <Line type="monotone" dataKey="C_A1" name="Representative Government" stroke="#06d6a0" />
           <Line type="monotone" dataKey="C_A2" name="Fundamental Rights" stroke="#1b9aaa" />

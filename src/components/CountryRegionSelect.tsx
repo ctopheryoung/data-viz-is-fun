@@ -29,12 +29,12 @@ function CountryRegionSelect({ selectedCountryRegion, onCountryRegionChange }: C
     >
       <Autocomplete
         id="country-region-select"
-        sx={{ width: 300 }}
+        sx={{ width: 250 }}
         disableClearable
         options={countryRegions}
         value={selectedCountryRegion}
         onChange={handleCountryRegionChange}
-        renderInput={(params) => <TextField {...params} label="Country or Region" />}
+        renderInput={(params) => <TextField {...params} label=" Change Country or Region" />}
       />
     </Box>
   )
