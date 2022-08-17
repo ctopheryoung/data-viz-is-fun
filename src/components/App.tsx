@@ -46,14 +46,14 @@ function getFilteredData(country: string): GSODIDataPoint[] {
 
 function App() {
   const [country, setCountry] = React.useState<string>('World');
-  const [dynamicYAxis, setDynamicYAxis] = React.useState(true);
+  const [normalizeYAxis, setNormalizeYAxis] = React.useState(false);
 
   function handleCountryRegionChange(newCountryRegion: string) {
     setCountry(newCountryRegion);
   }
 
-  function handleDynamicYAxisChange(newValue: boolean) {
-    setDynamicYAxis(newValue)
+  function handleNormalizeYAxisChange(newValue: boolean) {
+    setNormalizeYAxis(newValue)
   }
   
   return (
@@ -77,7 +77,7 @@ function App() {
           </Typography>
         </Box>
 
-        <Chart data={getFilteredData(country)} dynamicYAxis={dynamicYAxis} />
+        <Chart data={getFilteredData(country)} normalizeYAxis={normalizeYAxis} />
 
         <Box
           sx={{
@@ -87,7 +87,7 @@ function App() {
             justifyContent: 'space-evenly'
           }}
         >
-          <YAxisToggle dynamicYAxis={dynamicYAxis} onDynamicYAxisChange={handleDynamicYAxisChange} />
+          <YAxisToggle normalizeYAxis={normalizeYAxis} onNormalizeYAxisChange={handleNormalizeYAxisChange} />
           <CountryRegionSelect selectedCountryRegion={country} onCountryRegionChange={handleCountryRegionChange} />
         </Box>
 

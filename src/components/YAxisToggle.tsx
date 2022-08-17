@@ -3,22 +3,22 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
 interface YAxisToggleProps {
-  dynamicYAxis: boolean,
-  onDynamicYAxisChange: Function
+  normalizeYAxis: boolean,
+  onNormalizeYAxisChange: Function
 }
 
-function YAxisToggle({ dynamicYAxis, onDynamicYAxisChange }: YAxisToggleProps ) {
-  function handleDynamicYAxisChange(event: React.ChangeEvent<HTMLInputElement>) {
-    onDynamicYAxisChange(event.target.checked);
+function YAxisToggle({ normalizeYAxis, onNormalizeYAxisChange }: YAxisToggleProps ) {
+  function ormalizeYAxisChange(event: React.ChangeEvent<HTMLInputElement>) {
+    onNormalizeYAxisChange(event.target.checked);
   }
 
   return (
     <FormGroup>
       <FormControlLabel 
         control={
-          <Switch checked={dynamicYAxis} onChange={handleDynamicYAxisChange} />
+          <Switch checked={normalizeYAxis} onChange={ormalizeYAxisChange} />
         } 
-        label="Dynamic Domain (Y-Axis)" />
+        label="Normalize Y-Axis" />
     </FormGroup>
   )
 }

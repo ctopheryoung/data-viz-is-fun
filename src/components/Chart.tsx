@@ -4,10 +4,10 @@ import { GSODIDataPoint } from '../interfaces/GSODIDataPoint'
 
 interface ChartProps {
   data: GSODIDataPoint[],
-  dynamicYAxis: boolean
+  normalizeYAxis: boolean
 }
 
-function Chart({ data, dynamicYAxis }: ChartProps) {
+function Chart({ data, normalizeYAxis }: ChartProps) {
   return (
     <div className="Chart">
       <ResponsiveContainer width="100%" height={400}>
@@ -21,7 +21,7 @@ function Chart({ data, dynamicYAxis }: ChartProps) {
           <Line type="monotone" dataKey="C_A3" name="Checks On Goverment" stroke="#ef476f" />
           <Line type="monotone" dataKey="C_A4" name="Impartial Administration" stroke="#ffc43d" />
           <XAxis dataKey="ID_year" interval={4} />
-          <YAxis domain={dynamicYAxis ? ['auto', 'dataMax'] : [0, 1]} />
+          <YAxis domain={normalizeYAxis ? [0, 1] : ['auto', 'dataMax']} />
           <Tooltip />
           <Legend />
         </LineChart>
