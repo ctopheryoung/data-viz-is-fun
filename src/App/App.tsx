@@ -1,7 +1,9 @@
+import React from 'react';
 import './App.css';
 import data from '../data/selected_formatted_gsodi_data.json'
 import { GSODIDataPoint } from '../interfaces/GSODIDataPoint'
 import Chart from '../Chart/Chart';
+import CountryRegionSelect  from '../CountryRegionSelect/CountryRegionSelect';
 
 const dataArray: GSODIDataPoint[] = data as GSODIDataPoint[];
 
@@ -33,15 +35,22 @@ const dataArray: GSODIDataPoint[] = data as GSODIDataPoint[];
 // Add ability to change country/region if there is time
 
 
-function getFilteredData(): GSODIDataPoint[] {
+function getFilteredData(country: string): GSODIDataPoint[] {
   // Perform all filtering operations and return data to show in graph
-  return dataArray.filter(item => item.ID_country_name === "World")
+  return dataArray.filter(item => item.ID_country_name === country)
 }
 
 function App() {
+  const [country, setCountry] = React.useState<string>('World');
+
+  function handleCountryRegionChange(newCountryRegion: string) {
+    setCountry(newCountryRegion);
+  }
+  
   return (
     <div className="App">
-      <Chart data={getFilteredData()} />
+      <Chart data={getFilteredData(country)} />
+      <CountryRegionSelect selectedCountryRegion={country} onCountryRegionChange={handleCountryRegionChange} />
     </div>
   );
 }
