@@ -40,7 +40,7 @@ function Chart({ data }: ChartProps) {
           control={
             <Switch checked={dynamicYAxis} onChange={handleDynamicYAxisChange} />
           } 
-          label="Dynamic Y-Axis" />
+          label="Dynamic Domain (Y-Axis)" />
       </FormGroup>
     </div>
   );
