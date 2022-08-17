@@ -70,7 +70,7 @@ function App() {
           }}
         >
           <Typography component="h1" variant="h3" gutterBottom>
-            State of Democracy Over Time
+            Global State of Democracy Over Time
           </Typography>
           <Typography component="h2" variant="h5" gutterBottom>
             {country}
