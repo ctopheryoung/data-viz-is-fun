@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { ChartProps } from '../interfaces/ChartProps';
 import './Chart.css'
 
@@ -21,6 +21,8 @@ function Chart({ data }: ChartProps) {
         <Line type="monotone" dataKey="C_A4" stroke="#ffc43d" />
         <XAxis dataKey="ID_year" interval={4} />
         <YAxis domain={[0, 1]} />
+        <Tooltip />
+        <Legend />
       </LineChart>
     </div>
   );
