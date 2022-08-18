@@ -1,18 +1,21 @@
-import React, { SyntheticEvent } from 'react';
-import countryRegions from '../data/countries_and_regions.json';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import Box from '@mui/material/Box'
+import React, { SyntheticEvent } from "react";
+import countryRegions from "../data/countries_and_regions.json";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import Box from "@mui/material/Box";
 
 interface CountryRegionSelectProps {
-  selectedCountryRegion: string,
-  onCountryRegionChange: (newCountryRegion: string) => void
+  selectedCountryRegion: string;
+  onCountryRegionChange: (newCountryRegion: string) => void;
 }
 
-function CountryRegionSelect({ selectedCountryRegion, onCountryRegionChange }: CountryRegionSelectProps ) {
+function CountryRegionSelect({
+  selectedCountryRegion,
+  onCountryRegionChange,
+}: CountryRegionSelectProps) {
   const handleCountryRegionChange = (
     event: SyntheticEvent,
-    newCountry: string | null,
+    newCountry: string | null
   ) => {
     if (newCountry) {
       onCountryRegionChange(newCountry);
@@ -24,9 +27,9 @@ function CountryRegionSelect({ selectedCountryRegion, onCountryRegionChange }: C
       sx={{
         marginTop: 2,
         marginBottom: 2,
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
       }}
     >
       <Autocomplete
@@ -36,10 +39,12 @@ function CountryRegionSelect({ selectedCountryRegion, onCountryRegionChange }: C
         options={countryRegions}
         value={selectedCountryRegion}
         onChange={handleCountryRegionChange}
-        renderInput={(params) => <TextField {...params} label=" Change Country or Region" />}
+        renderInput={(params) => (
+          <TextField {...params} label=" Change Country or Region" />
+        )}
       />
     </Box>
-  )
+  );
 }
 
 export default CountryRegionSelect;

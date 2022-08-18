@@ -32,7 +32,7 @@ I had originally written functionality that would handle parsing the raw CSV dat
 
 I initially included the Material UI library only because it has pre-built Text Input and Autocomplete components. Once it was in the project, though, I realized it would save me a lot time and allow me to focus more on feature development rather than styling for this exercise. Plus, when in rome!?
 
-I realize, however, that this does not lend itself to showcasing my CSS or SCSS skills (which I am competent with),  but I did write some CSS in the `sx={{}}` attribute overrides on MUI components and hopefully my overall implementation of MUI demonstrates that I have a good understanding of layout and design. 
+I realize, however, that this does not lend itself to showcasing my CSS or SCSS skills (which I am competent with), but I did write some CSS in the `sx={{}}` attribute overrides on MUI components and hopefully my overall implementation of MUI demonstrates that I have a good understanding of layout and design.
 
 ## Build
 
