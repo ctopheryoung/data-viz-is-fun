@@ -61,10 +61,10 @@ function App() {
 
         <Chart data={getFilteredData(country)} normalizeYAxis={normalizeYAxis} />
 
-        <Box sx={{ display: 'flex', margin: 1}} >
-          <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: "space-between", margin: 1 }}>
+        <Box sx={{ display: 'flex' }} >
+          <Box sx={{ display: 'flex', flexDirection: 'column', margin: 1 }}>
             <Typography component="h2" variant="h6">
-              Chart options:
+              Options
             </Typography>
             <CountryRegionSelect selectedCountryRegion={country} onCountryRegionChange={handleCountryRegionChange} />
             <YAxisToggle normalizeYAxis={normalizeYAxis} onNormalizeYAxisChange={handleNormalizeYAxisChange} />
@@ -72,19 +72,20 @@ function App() {
 
           <Divider orientation="vertical" flexItem sx={{ margin: 1}} />
 
-          <Box>
-            <Typography component="div" variant="body2" sx={{ margin: 1}}>
-              Welcome to my project! The data displayed in the chart above is from the <a href="https://www.idea.int/" target="_blank" rel="noreferrer">International Institue for Democracy and Electoral Assistance</a>'s <a href="https://www.idea.int/gsod-indices/welcome" target="_blank" rel="noreferrer">Global State of Democracy Indices</a>. The data measures democratic trends at the country, regional, and global levels from 1975-2021 and has distilled the many data points and measurements into five main, democratic attributes. Four of these are included on the chart: <a href="https://www.idea.int/gsod-indices/about#Representative%20Government" target="_blank" rel="noreferrer">Representative Government</a>, <a href="https://www.idea.int/gsod-indices/about#Fundamental%20Rights" target="_blank" rel="noreferrer">Fundamental Rights</a>, <a href="https://www.idea.int/gsod-indices/about#Checks%20on%20Government" target="_blank" rel="noreferrer">Checks on Government</a>, <a href="https://www.idea.int/gsod-indices/about#Impartial%20Administration" target="_blank" rel="noreferrer">Impartial Administration</a>. The fifth, Participatory Engagement, does not offer an aggregate value like the others, so it was excluded from this project.
+          <Box sx={{  margin: 1}}>
+            <Typography component="h2" variant="h6">
+              About
             </Typography>
 
-            <Typography component="div" variant="body2" sx={{ margin: 1}}>
-              Please feel free to explore the options at the left. The "Change Country or Region" selector allows you to change the data being displayed in the cart to any region, subregion, or country as defined in the indices. The "Normalize Y-Axis" toggle allows to to change the scale of the Y-Axis to fit the data or fix the range from 0 to 1 (which can be helpful when comparing different countries and regions). Please enjoy!
+            <Typography component="section" variant="body1" gutterBottom>
+              The data displayed in the chart above is from the International IDEA's <a href="https://www.idea.int/gsod-indices/about" target="_blank" rel="noreferrer">Global State of Democracy Indices</a>. The data measures democratic trends at the country, regional, and global levels from 1975-2021 and the researchers have distilled their findings into five main democratic attributes, the first four of which are included on the chart. The fifth, Participatory Engagement, does not offer an aggregate value like the others and as such was excluded.
+            </Typography>
+
+            <Typography component="section" variant="body1" gutterBottom>
+              Please feel free to explore the options at the left to dynamically change the data visualization. You can change the source data to any of the countries or regions defined in the indices. You can also change the Y-Axis Range to fit the data or consistently show the entire scale (0-1).
             </Typography>
           </Box>
-
         </Box>
-
-        {/* TODO: Add source: "Source: International IDEA, The Global State of Democracy Indices, 1975-2021" */}
       </Container>
     </div>
   );

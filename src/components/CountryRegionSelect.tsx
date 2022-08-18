@@ -22,6 +22,7 @@ function CountryRegionSelect({ selectedCountryRegion, onCountryRegionChange }: C
     <Box
       sx={{
         marginTop: 2,
+        marginBottom: 2,
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -29,7 +30,7 @@ function CountryRegionSelect({ selectedCountryRegion, onCountryRegionChange }: C
     >
       <Autocomplete
         id="country-region-select"
-        sx={{ width: 250 }}
+        sx={{ width: 220 }}
         disableClearable
         options={countryRegions}
         value={selectedCountryRegion}
