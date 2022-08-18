@@ -67,9 +67,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## TODO / Ideas for future development
 
 - **Implement testing** (really would have liked to get to this, but started to push the suggested 5 hour time limit)
+- Improve mobile experience by breaking options and about sections into vertical columns
 - Add the ability to choose which attributes to display, one at a time up to all four (or five)
 - Find a way to show the sub-attributes of the fifth key attribute without making the chart too 'busy'
 - Add tooltips to items in legend or find another way to better explain what each metric represents
 - Implement feature to show multiple countries on the chart at one time (may have to be combined with the ability to choose which attributes to display, i.e., only compare one attribute at a time)
 - Dynamically change the color of the line based on trend over time (i.e. negative trending attribute could be red, positive trending attribute could be green)
 - Customize MUI theme
+- Look into performance optimizations
+
+## Production Readiness Checklist
+
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+
+Some items from the checklist that were irrelevant were skipped over and I felt that some were outside of the scope of this project. 
+
+It would be worth taking a look at performance and potential gains with compression (gzip) or other approaches.
+
+I also only have a limited number of testing devices available, so additional OS/browser testing would be worthwhile.
+
+[Front-End Checklist report PDF](./fe_checklist_report.pdf)
