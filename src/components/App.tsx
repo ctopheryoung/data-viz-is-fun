@@ -61,7 +61,7 @@ function App() {
 
         <Chart data={getFilteredData(country)} normalizeYAxis={normalizeYAxis} />
 
-        <Box sx={{ display: 'flex' }} >
+        <Box sx={{ display: 'flex', marginTop: 1 }} >
           <Box sx={{ display: 'flex', flexDirection: 'column', margin: 1 }}>
             <Typography component="h2" variant="h6">
               Options
@@ -77,12 +77,12 @@ function App() {
               About
             </Typography>
 
-            <Typography component="section" variant="body1" gutterBottom>
+            <Typography component="section" variant="body2" gutterBottom>
               The data displayed in the chart above is from the International IDEA's <a href="https://www.idea.int/gsod-indices/about" target="_blank" rel="noreferrer">Global State of Democracy Indices</a>. The data measures democratic trends at the country, regional, and global levels from 1975-2021 and the researchers have distilled their findings into five main democratic attributes, the first four of which are included on the chart. The fifth, Participatory Engagement, does not offer an aggregate value like the others and as such was excluded.
             </Typography>
 
-            <Typography component="section" variant="body1" gutterBottom>
-              Please feel free to explore the options at the left to dynamically change the data visualization. You can change the source data to any of the countries or regions defined in the indices. You can also change the Y-Axis Range to fit the data or consistently show the entire scale (0-1).
+            <Typography component="section" variant="body2" gutterBottom>
+              Feel free to explore the options at the left to dynamically change the data visualization. You can change the source data to any of the countries or regions defined in the indices. You can also change the Y-Axis Range to fit the data or consistently show the entire scale (0-1).
             </Typography>
           </Box>
         </Box>

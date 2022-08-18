@@ -18,7 +18,7 @@ function YAxisToggle({ normalizeYAxis, onNormalizeYAxisChange }: YAxisToggleProp
         control={
           <Switch checked={normalizeYAxis} onChange={ormalizeYAxisChange} />
         } 
-        label="Normalize Y-Axis" />
+        label="Normalize Domain (Y-Axis)" />
     </FormGroup>
   )
 }

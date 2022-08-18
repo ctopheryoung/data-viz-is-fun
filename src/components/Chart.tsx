@@ -9,7 +9,6 @@ interface ChartProps {
 
 function Chart({ data, normalizeYAxis }: ChartProps) {
   return (
-    // TODO: Add tooltip for Legend labels?
     <div className="Chart">
       <ResponsiveContainer width="100%" height={350}>
         <LineChart 

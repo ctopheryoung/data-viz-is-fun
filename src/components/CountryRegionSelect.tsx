@@ -30,7 +30,7 @@ function CountryRegionSelect({ selectedCountryRegion, onCountryRegionChange }: C
     >
       <Autocomplete
         id="country-region-select"
-        sx={{ width: 220 }}
+        sx={{ width: 260 }}
         disableClearable
         options={countryRegions}
         value={selectedCountryRegion}
