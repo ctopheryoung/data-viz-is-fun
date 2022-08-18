@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Data Visualization Is Fun
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Exploring the state of global democracy from 1975-2021.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This is a frontend application that visualizes data from the International Institue for Democracy and Electoral Assistance (IDEA)'s Global State of Democracy Indices (GSODI). The data measures democratic trends at the country, regional, and global levels from 1975-2021. Amongst the many attributes included in the indices, the researchers also identified 5 key attributes essential to a functioning democracy, the first four of which are included in the data visualization. The fifth, Participatory Engagement, does not offer an aggregate value like the others and as such was excluded.
 
-### `npm start`
+### Features
+
+- Visualization of GSODI data for four key attributes of a functioning Democracy
+- Ability to dynamically change the country or region being displayed in the chart
+- Option to change the scale of the Y-Axis to fit the displayed data or to show the normalized, full range (0-1)
+- Showcases several features of the Recharts library, including tooltips, a legend, X and Y axes
+
+### Technologies
+
+- React
+- Typescript
+- Recharts
+- Material UI
+
+## Demo
+
+This application is deployed on Netlify and can be accessed at: https://peaceful-empanada-c814a0.netlify.app/
+
+## A note about the data format
+
+I had originally written functionality that would handle parsing the raw CSV data from the source into usable JSON, getting the list of selectable countries from that JSON, and more but realized that when reading the data from a local file, it would be more performant (and make for cleaner code) to pre-process all the data into formats that will be needed/useful rather than doing it on the fly. I also removed many of the unused attributes and sub-attributes to reduce the weight of the data and further improve performance.
+
+## A note about the choice to rely on Material UI for most styling and layout
+
+I initially included the Material UI library only because it has pre-built Text Input and Autocomplete components. Once it was in the project, though, I realized it would save me a lot time and allow me to focus more on feature development rather than styling for this exercise. Plus, when in rome!?
+
+I realize, however, that this does not lend itself to showcasing my CSS or SCSS skills (which I am competent with),  but I did write some CSS in the `sx={{}}` attribute overrides on MUI components and hopefully my overall implementation of MUI demonstrates that I have a good understanding of layout and design. 
+
+## Build
+
+### Requirements
+
+- [Node.js](https://nodejs.org/) >= 14
+
+### Clone this repo
+
+```sh
+$ git clone https://github.com/ctopheryoung/data-viz-is-fun.git
+$ cd data-viz-is-fun
+```
+
+### Install dependencies
+
+Use [npm](https://www.npmjs.com/) (included with Node.js) to install dependencies:
+
+```sh
+$ npm install
+```
+
+### Run
+
+```sh
+$ npm start
+```
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## TODO / Ideas for future development
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Implement testing** (really would have liked to get to this, but started to push the suggested 5 hour time limit)
+- Add the ability to choose which attributes to display, one at a time up to all four (or five)
+- Find a way to show the sub-attributes of the fifth key attribute without making the chart too 'busy'
+- Add tooltips to items in legend or find another way to better explain what each metric represents
+- Implement feature to show multiple countries on the chart at one time (may have to be combined with the ability to choose which attributes to display, i.e., only compare one attribute at a time)
+- Dynamically change the color of the line based on trend over time (i.e. negative trending attribute could be red, positive trending attribute could be green)
+- Customize MUI theme
