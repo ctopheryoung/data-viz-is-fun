@@ -1,10 +1,11 @@
+import React from 'react';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
 interface YAxisToggleProps {
   normalizeYAxis: boolean,
-  onNormalizeYAxisChange: Function
+  onNormalizeYAxisChange: (newValue: boolean) => void
 }
 
 function YAxisToggle({ normalizeYAxis, onNormalizeYAxisChange }: YAxisToggleProps ) {

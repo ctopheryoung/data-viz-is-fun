@@ -1,3 +1,4 @@
+import React from 'react';
 import { ResponsiveContainer,LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 import { GSODIDataPoint } from '../interfaces/GSODIDataPoint'
@@ -10,7 +11,7 @@ interface ChartProps {
 function Chart({ data, normalizeYAxis }: ChartProps) {
   return (
     <div className="Chart">
-      <ResponsiveContainer width="100%" height={350}>
+      <ResponsiveContainer width="100%" height={380}>
         <LineChart 
           data={data} 
           margin={{ top: 5, left: 5, right: 20, bottom: 5 }}
